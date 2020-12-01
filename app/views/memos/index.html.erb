@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="row">
+		<div class="memos">
+			<ul>
+				<% @memos.each do |t| %>
+					<li><%= t.memo %></li>
+					<li><%= link_to "削除", memo_path(t), method: :delete, class: "btn btn-danger" %></li>
+					<br>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="new_memo">
+			<%= form_with model: @memo, url: memos_path do |f| %>
+				<%= f.label :memo, "入力フォーム" %>
+				<%= f.text_area :memo, rows:"3", placeholder: "記入してください" %>
+				<%= f.submit "メモを作成" %>
+			<% end %>
+		</div>
+	</div>
+</div>
