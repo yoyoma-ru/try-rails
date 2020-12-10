@@ -12,11 +12,50 @@
 	</div>
 	<div class="row">
 		<div class="new_memo">
-			<%= form_with model: @memo, url: memos_path do |f| %>
+			<%= form_with model: @memo, id: "new_form" do |f| %>
 				<%= f.label :memo, "入力フォーム" %>
-				<%= f.text_area :memo, rows:"3", placeholder: "記入してください" %>
+				<%= f.text_area :memo, size: "100x1", placeholder: "記入してください" %>
 				<%= f.submit "メモを作成" %>
 			<% end %>
 		</div>
 	</div>
+
+	<script>
+		$(document).on('turbolinks:load', function(){
+			function buildHTMl(body){
+				var content = body.memo ? `${body.memo}` : "";
+				var html = `<ul>
+								<li>
+									${content}
+								</li>
+							</ul>`
+				return html;
+			};
+			$('#new_form').on('submit', function(event){
+				event.preventDefault();
+				console.log("start")
+				// var memo = new FormData(this);
+				const inputText = document.getElementById("memo_memo").value;
+				// const memo = $("#new_form [memo=memo]").val();
+				console.log(inputText);
+				var url = $(this).attr('action');
+				$.ajax({
+					url: url,
+					type: 'POST',
+					data: {memo: {memo: inputText}},
+					dataType: 'json',
+					processData: false,
+					contentType: false
+				})
+				.done(function(data){
+					var html = buildHTML(data);
+					$(".memos").append(html);
+					$("#memo_memo").val("");
+				})
+				.fail(function(data){
+					alert('エラーが発生したためメッセージが送信できませんでした');
+				})
+			});
+		});
+	</script>
 </div>

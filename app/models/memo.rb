@@ -1,3 +1,3 @@
 class Memo < ApplicationRecord
-	validates :memos, presence: true
+	validates :memo, presence: true
 end

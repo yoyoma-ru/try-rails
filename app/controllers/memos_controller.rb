@@ -1,4 +1,6 @@
 class MemosController < ApplicationController
+
+
 	def index
 		@memo = Memo.new
 		@memos = Memo.all
@@ -7,10 +9,13 @@ class MemosController < ApplicationController
 	def create
 		@memo = Memo.new(memo_params)
 		if @memo.save
-			redirect_to memos_path
+			respond_to do |format|
+				format.html{redirect_to root_path}
+				format.json
+			end
 		else
 			flash.now[:alert] = "送信に失敗しました。"
-			render action: :new
+			render action: :index
 		end
 	end
 
