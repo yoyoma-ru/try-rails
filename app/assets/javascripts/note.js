@@ -26,7 +26,7 @@ $(function(){
 			$(".notes").append(html);
 			$(".note_form-text").val("");
 		})
-		.fail(function(){
+		.fail(function(jqXHR, textStatus, errorThrown){
 			alert("error!");
 			console.log("ajax通信に失敗しました");
             console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得

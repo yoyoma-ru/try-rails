@@ -1,0 +1,198 @@
+// Place all the styles related to the scrolls controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "utf-8";
+
+// ↓example1.html.erb↓
+.mainTitle {
+	text-align: center;
+}
+.wrapper {
+	max-width: 960px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-direction: row-reverse;
+}
+.indexWrapper {
+	position: sticky;
+	top: 0px;
+	width: 176px;
+}
+.contents {
+	width: calc(100% - 240px);
+}
+
+.index {
+	padding-left: 0;
+}
+.index li {
+	list-style: none;
+	color: #999999;
+}
+.index a {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	padding: 8px;
+	border-radius: 4px;
+	text-decoration: none;
+	color: inherit;
+}
+.index a.active {
+	color: #333333;
+	background-color: #f3f3f3;
+}
+.contents img {
+	width: 100%;
+	height: auto;
+}
+// ↑example1.html.erb↑
+
+
+
+// ↓example2.html.erb↓
+.lists{
+	z-index: 7;
+	position: fixed;
+	width: 100%;
+}
+.lists div.active{
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.image1{
+	background-image: url(./image1.jpg);
+}
+.image2{
+	background-image: url(./image2.jpg);
+}
+.image3{
+	background-image: url(./image3.jpg);
+}
+.image4{
+	background-image: url(./image4.jpg);
+}
+.image5{
+	background-image: url(./image5.jpg);
+}
+.top-box{
+	height: 200vh;
+}
+
+
+
+// ↓example3.html.erb↓
+.container {
+  max-width: 400px;
+  margin: auto;
+}
+.row {
+  display: flex;
+}
+.box {
+  margin: 10px;
+  width: 100px;
+  height: 90vh;
+  background-color: #79BD9A;
+}
+.text1{
+	font-size: 40px;
+}
+
+
+
+// ↓example4.html.erb↓
+.lists2 div{
+	position: fixed;
+	width: 100%;
+}
+.lists2 div.active{
+	opacity: 1;
+}
+.image6{
+	background-image: url(./image1.jpg);
+	opacity: 0;
+	z-index: 1;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.image7{
+	background-image: url(./image2.jpg);
+	opacity: 0;
+	z-index: 1;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.image8{
+	background-image: url(./image3.jpg);
+	opacity: 0;
+	z-index: 1;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.image9{
+	background-image: url(./image4.jpg);
+	opacity: 0;
+	z-index: 1;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.image10{
+	background-image: url(./image5.jpg);
+	opacity: 0;
+	z-index: 1;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.top-box2{
+	height: 200vh;
+	border: 1px solid #000;
+}
+
+
+
+// ↓example5.html.erb↓
+.lists3 div{
+	position: fixed;
+	width: 100%;
+}
+.lists3 div.active{
+	opacity: 1;
+}
+.is-hedden{
+	opacity: 0;
+}
+.image-style{
+	z-index: 1;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.image11{
+	background-image: url(./image1.jpg);
+}
+.image12{
+	background-image: url(./image2.jpg);
+}
+.image13{
+	background-image: url(./image3.jpg);
+}
+.image14{
+	background-image: url(./image4.jpg);
+}
+.image15{
+	background-image: url(./image5.jpg);
+}
+.top-box2{
+	height: 200vh;
+	border: 1px solid #000;
+}

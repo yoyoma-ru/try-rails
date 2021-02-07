@@ -1,0 +1,2 @@
+class Scroll < ApplicationRecord
+end
