@@ -57,10 +57,11 @@
 .lists{
 	z-index: 7;
 	position: fixed;
+	bottom: 0;
 	width: 100%;
 }
 .lists div.active{
-	height: 100vh;
+	height: 50vh;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -81,6 +82,7 @@
 }
 .top-box{
 	height: 200vh;
+	border: 1px solid #000;
 }
 
 
@@ -161,21 +163,17 @@
 
 
 // ↓example5.html.erb↓
-.lists3 div{
-	position: fixed;
-	width: 100%;
-}
-.lists3 div.active{
-	opacity: 1;
-}
-.is-hedden{
-	opacity: 0;
-}
 .image-style{
-	z-index: 1;
+	width: 100%;
+	z-index: 5;
 	height: 100vh;
 	background-repeat: no-repeat;
 	background-size: cover;
+	position: fixed;
+	opacity: 0;
+}
+.is-active{
+	opacity: 1;
 }
 .image11{
 	background-image: url(./image1.jpg);
@@ -192,7 +190,7 @@
 .image15{
 	background-image: url(./image5.jpg);
 }
-.top-box2{
+.top-box3{
 	height: 200vh;
 	border: 1px solid #000;
 }
