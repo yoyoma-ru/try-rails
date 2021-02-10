@@ -26,17 +26,41 @@ function doWhenIntersect(entries){
 }
 function activateIndex(element){
 	console.log(element);
+	const currentLeaveIndex = document.querySelector(
+		"#imageList3 .is-leave");
+	if(currentLeaveIndex !== null){
+		currentLeaveIndex.classList.remove("is-leave");
+		console.log("leave");
+	}
+
 	const currentActiveIndex = document.querySelector(
 		"#imageList3 .is-active");
 	console.log(currentActiveIndex);
-	if (currentActiveIndex !== null){
+	if(currentActiveIndex !== null){
 		currentActiveIndex.classList.remove("is-active");
-		console.log("remove");
+		currentActiveIndex.classList.add("is-leave");
+		console.log("add remove");
 	}
-	console.log(element.id);
+
+	const currentActiveText = document.querySelector(
+		".text-box .is-active2");
+	console.log(currentActiveIndex);
+	if(currentActiveText !== null){
+		currentActiveText.classList.remove("is-active2");
+		console.log("text remove");
+	}
+
 	const newActiveList = document.querySelector(
 		`div[class="image-style ${element.id}"]`
 	);
 	console.log(newActiveList)
 	newActiveList.classList.add("is-active");
+
+	const newActiveText = document.querySelector(
+		`div[class="text-box ${element.id}"]`
+	);
+	console.log(newActiveText)
+	newActiveText.classList.add("is-active2");
+	newActiveText.classList.remove(element.id);
 }
+
