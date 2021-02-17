@@ -1,4 +1,8 @@
 class ScrollsController < ApplicationController
+
+	def index
+	end
+
 	def example1
 	end
 
@@ -12,5 +16,8 @@ class ScrollsController < ApplicationController
 	end
 
 	def example5
+	end
+
+	def example6
 	end
 end
