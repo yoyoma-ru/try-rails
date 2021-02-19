@@ -10,7 +10,7 @@ class NotesController < ApplicationController
 		if @note.save
 			respond_to do |format|
 				format.html { redirect_to notes_path }
-				format.json { render json: { body: @note.body, id: @note.id} }
+				format.json { render json: {body: @note.body, id: @note.id}}
 			end
 		end
 	end

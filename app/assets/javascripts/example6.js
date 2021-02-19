@@ -3,7 +3,7 @@ function scrollWindow(){
 	var items = document.querySelectorAll(".stop");
 	items.forEach(function(item){
 		var backgroundColor = item.style.backgroundColor;
-		if(isItemInScreen3(item) && !(backgroundColor == 'rgb(37, 37, 37)')){
+		if(isItemInScreen(item) && !(backgroundColor == 'rgb(37, 37, 37)')){
 			item.style.backgroundColor = 'rgb(37, 37, 37)';
 			// stopScroll();
 			no_scroll();
@@ -64,7 +64,6 @@ function return_scroll() {
     // スマホでのタッチ操作でのスクロール禁止解除
     document.removeEventListener('touchmove', scroll_control, { passive: false });
 }
-
 // スクロール関連メソッド
 function scroll_control(event) {
     event.preventDefault();
