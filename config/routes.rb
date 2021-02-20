@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :memos, only: [:index, :create, :destroy, :edit]
-  resources :notes, only: [:index, :create, :destroy]
+  resources :notes, only: [:index, :create, :destroy, :edit, :update]
 
   get'/scrolls/' => 'scrolls#index'
   get'/scroll/example1' => 'scrolls#example1'
@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   get'/scroll/example4' => 'scrolls#example4'
   get'/scroll/example5' => 'scrolls#example5'
   get'/scroll/example6' => 'scrolls#example6'
+
+  get'/notes/edit_example' => 'notes#edit_example', as: "edit_example_note"
 end

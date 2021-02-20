@@ -1,4 +1,4 @@
-
+<h1>noteの非同期通信で作成、削除</h1>
 <div class="form">
 	<%= form_with(model: @note, class: "note_form", id: "note_input", local: true) do |form| %>
 		<%= form.text_area :body, class: "note_form-text" %>
@@ -9,11 +9,28 @@
 <div class="notes">
 	<% @notes.each do |note| %>
 		<div class="note" id="note<%= note.id %>">
-			<span class="note_name">
+			<div class="note_name">
 				投稿者: ユーザー機能未実装
-			</span>
-			<%= link_to "削除", note_path(note.id), class: "note_delete", method: :delete %>
-			<%= simple_format note.body, class: "note_body" %>
+			</div>
+			<p id="js-note-label-<%= note.id %>" class="note_body"><%= note.body %></p>
+			<div class="">
+				<!-- ↓edit/update -->
+				<span data-note-id=<%= note.id %> class="js-edit-note-button">
+					<i class="fas fa-edit text-primary">編集</i>
+				</span>
+				<p id="js-note-post-error-<%= note.id %>" class="text-danger"></p>
+				<textarea style="display: none" id="js-textarea-note-<%= note.id %>" class="form-control note-post-error"><%= note.body %></textarea>
+				<div id="js-note-button-<%= note.id %>" style="display: none;">
+					<button data-cancel-id=<%= note.id %> type="button" class="btn btn-light note-cancel-button">キャンセル</button>
+					<button data-update-id=<%= note.id %> type="submit" class="btn btn-success note-update-button">更新</button>
+				</div>
+				<!-- ↑edit/update -->
+				<%= link_to note_path(note.id), class: "note_delete", method: :delete do %>
+					<i class="fas fa-trash-alt" style="color: black;">削除</i>
+				<% end %>
+			</div>
+			<br>
 		</div>
 	<% end %>
 </div>
+

@@ -1,0 +1,20 @@
+<h1>コメントの編集機能の実装</h1>
+
+<div>
+	<% @notes.each do |note| %>
+		<!-- 編集ボタン -->
+		<span data-note-id=<%= note.id %> class="js-edit-note-button">
+			<i class="fas fa-edit text-primary"></i>
+		</span>
+		<!-- 一意のコメント -->
+		<div id="js-note-<%= note.id %>">
+			<p id="js-note-label-<%= note.id %>"><%= note.body %></p>
+			<p id="js-note-post-error-<%= note.id %>" class="text-danger"></p>
+			<textarea style="display: none" id="js-textarea-note-<%= note.id %>" class="form-control note-post-error"><%= note.body %></textarea>
+			<div id="js-note-button-<%= note.id %>" style="display: none;">
+				<button data-cancel-id=<%= note.id %> type="button" class="btn btn-light note-cancel-button">キャンセル</button>
+				<button data-update-id=<%= note.id %> type="submit" class="btn btn-success note-update-button">更新</button>
+			</div>
+		</div>
+	<% end %>
+</div>
